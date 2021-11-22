@@ -3,6 +3,11 @@ var btn = document.getElementById("addressBtn");
 
 var span = document.getElementsByClassName("close")[0];
 
+let inputPincode = document.getElementById("inputPincode");
+
+
+var inputVillage = document.getElementById("inputVillage");
+
 btn.onclick = function(){
   modal.style.display = "block";
 }
@@ -11,21 +16,11 @@ span.onclick = function(){
   modal.style.display = "none";
 }
 
+function openVillageinput (event){
+	if (event.key === "Enter"){
+		inputPincode.classList.add("d-none");
+		inputVillage.classList.remove("d-none");
+	}
+}
 
-var input = document.getElementById("pincode");
-
-new Awesomplete(input, {
-	list: [
-		{ label: "234234", value: "Andhra Pradesh" },
-		{ label: "234576", value: "Tamil Nadu" },
-		{ label: "987635", value: "Uttar pradesh" },
-    { label: "123456", value: "Odisha" },
-    { label: "983286", value: "Arunachal Pradesh" },
-    { label: "725346", value: "Karnataka" },
-    { label: "123476", value: "Madhya Pradesh" },
-	]
-});
-new Awesomplete(inputReference, {
-	minChars: 6,
-	maxItems: 5,
-});
+inputPincode.addEventListener("keydown",openVillageinput);
