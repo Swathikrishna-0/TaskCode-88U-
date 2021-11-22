@@ -8,6 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="index.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -19,14 +20,16 @@
         <div class="modal-body">
           <form autocomplete="off" id="inputPincode"> 
             <div class="autocomplete" style="width:300px;" >
-              <label for="pincode">Pincode</label>
-              <input id="myInput" type="text" name="pincode" placeholder="Enter pincode" style="align-items:center">
+
+            <div id="inputPincodeContainer">
+                Pincode:
+                <input type="text" id="inputPincode" />
+                <input type="button" value="Yes" onclick="ShowHideDiv(this)"/>
             </div>
-          </form>
-          <form autocomplete="off"  id="inputVillage" style="display:none">
-            <div class="autocomplete" style="width:300px;" >
-              <label for="village">Village Name</label>
-              <input id="myInput" type="text" name="village" style="align-items:center" placeholder="Entervillage">
+            <div id="dvVillage" style="display: none">
+              Village:
+              <input type="text" id="inputVillage" />
+            </div>
             </div>
           </form>
         </div>
@@ -34,10 +37,14 @@
       
     </div>
   </div>
-
-  <script src="index.js"></script>
-
 </div>
+<script type="text/javascript">
+        function ShowHideDiv(btnPassport) {
+            var dvVillage = document.getElementById("dvVillage");
+            dvVillage.style.display = btnPassport.value == "Yes" ? "block" : "none";
+        }
+</script>
+<script src="index.js"></script>
   
 </body>
 </html>
