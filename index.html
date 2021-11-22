@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <title>Address button</title>
+  <link rel="stylesheet" type="text/css" href="index.css" />
+  <script src="index.js"></script>
+
+</head>
+<body>
+  <button id="addressBtn" class="address-btn">Address</button>
+  <div class="modal" id="addressModal">
+    <div class="modal-content"> 
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h1 class="heading">Choose your location</h1>
+      </div>
+      <div class="modal-body"> 
+        <p class="paragraph">Select a delivery location to see product availability and delivery options
+        </p>
+        <div class="addressFormContainer"> 
+          <form id="addressForm" autocomplete="off" action="" method="get"> 
+            <div> 
+              <label for="pincode" class="pincode">PINCODE</label><br>
+                <input type="text" id="pincode" class="form-control input-box" placeholder="Enter 6-digit pincode"/> 
+                <p id="pinErrMsg"></p>
+              </div>
+              <div> 
+                <label for="villagename" class="village">VILLAGE NAME</label><br>
+                <input type="text" id="villagename" class="form-control input-box" placeholder=" Enter village name"/> 
+                <p id="villageErrMsg"></p>
+              </div>
+              <div > 
+                <button class="applybtn">Apply</button>
+              </div>
+            </form>
+          </div>
+          
+        </div>
+      </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
